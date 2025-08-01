@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "株式会社 福源屋",
     images: [
       {
-        url: "https://fukugenyaguide225-homepage.vercel.app/logo.png",
+        url: "https://fukugenyaguide225-homepage.vercel.app/opgLogo.png",
         width: 1200,
         height: 630,
       },
@@ -54,7 +54,7 @@ export default function RootLayout({
         <link
           rel="preload"
           as="image"
-          href="/logo.png"
+          href="/opgLogo.png"
           type="image/png"
         />
         <meta name="theme-color" content="#ffffff" />
