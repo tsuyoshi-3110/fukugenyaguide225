@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
+// metadata定義はSEOやsitemapなどに引き続き利用OK
 export const metadata: Metadata = {
   title: "株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事",
   description:
@@ -48,6 +49,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <head>
+        <title>株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事</title>
         {/* ファビコン */}
         <link rel="icon" href="/favicon.ico?v=2" />
         {/* OGP画像事前読み込み */}
@@ -58,7 +60,8 @@ export default function RootLayout({
           type="image/png"
         />
         <meta name="theme-color" content="#ffffff" />
-        {/* OGPタグ */}
+
+        {/* ★★★ ここからOGP/Twitterタグは“手動で直書き”してください ★★★ */}
         <meta property="og:title" content="株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事" />
         <meta property="og:description" content="大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。" />
         <meta property="og:type" content="website" />
@@ -68,11 +71,12 @@ export default function RootLayout({
         <meta property="og:image" content="https://fukugenyaguide225.vercel.app/opgLogo.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        {/* Twitterカード */}
+
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事" />
         <meta name="twitter:description" content="大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。" />
         <meta name="twitter:image" content="https://fukugenyaguide225.vercel.app/opgLogo.png" />
+        {/* ★★★ ここまで ★★★ */}
       </head>
 
       <body className="relative min-h-screen">
