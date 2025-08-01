@@ -21,17 +21,17 @@ export const metadata: Metadata = {
     title: "株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事",
     description:
       "大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。",
-    url: "https://fukugenyaguide225-homepage.vercel.app/", // 実際のURLに変更可
+    url: "https://fukugenyaguide225-homepage.vercel.app/",
     siteName: "株式会社 福源屋",
     images: [
       {
-        url: "/ogp.jpg",
+        url: "https://fukugenyaguide225-homepage.vercel.app/logo.png",
         width: 1200,
         height: 630,
       },
     ],
     locale: "ja_JP",
-    type: "website", // ← ここを "website" に修正！
+    type: "website",
   },
 };
 
@@ -48,37 +48,40 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <head>
+        {/* ファビコン */}
+        <link rel="icon" href="/favicon.ico?v=2" />
+        {/* ロゴ画像事前読み込み */}
         <link
           rel="preload"
           as="image"
-          href="/logo.jpg"
-          type="image/webp"
+          href="/logo.png"
+          type="image/png"
         />
         <meta name="theme-color" content="#ffffff" />
-        <meta
-          name="google-site-verification"
-          content="UcH7-5B4bwpJxxSjIpBskahFhBRTSLRJUZ8A3LAnnFE"
-        />
-        <meta
-          name="google-site-verification"
-          content="h2O77asgMDfUmHBb7dda53OOJdsxv9GKXd5rrRgIQ-k"
-        />
-          <link rel="icon" href="/favicon.ico?v=2" />
+        {/* OGPタグ */}
+        <meta property="og:title" content="株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事" />
+        <meta property="og:description" content="大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://fukugenyaguide225-homepage.vercel.app/" />
+        <meta property="og:site_name" content="株式会社 福源屋" />
+        <meta property="og:locale" content="ja_JP" />
+        <meta property="og:image" content="https://fukugenyaguide225-homepage.vercel.app/logo.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        {/* Twitterカード */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事" />
+        <meta name="twitter:description" content="大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。" />
+        <meta name="twitter:image" content="https://fukugenyaguide225-homepage.vercel.app/logo.png" />
       </head>
 
       <body className="relative min-h-screen">
         <SubscriptionOverlay siteKey={siteKey} />
-        {/* === 背景レイヤー（Firestoreの画像） === */}
         <WallpaperBackground />
-
-        {/* === パステルグラデーション（上） === */}
         <ThemeBackground />
-
-        {/* === 常設ヘッダー & ページ内容 === */}
         <Header />
         {children}
-
-        {/* ✅ 構造化データは body末尾でScriptで出力 */}
+        {/* 構造化データ（JSON-LD、Google検索用） */}
         <Script
           id="ld-json"
           type="application/ld+json"
@@ -103,8 +106,8 @@ export default function RootLayout({
             founder: "中井 弘也",
             employee: "13名（アルバイト含む）",
             openingHours: "09:00-18:00",
-            image: "/ogp.jpg",
-            sameAs: [], // SNSあれば配列で
+            image: "https://fukugenyaguide225-homepage.vercel.app/logo.png",
+            sameAs: [],
           })}
         </Script>
       </body>
