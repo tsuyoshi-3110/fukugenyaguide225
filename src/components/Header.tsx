@@ -37,7 +37,7 @@ export default function Header({ className = "" }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const gradient = useThemeGradient();
   const logoUrl = useHeaderLogoUrl();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -120,7 +120,7 @@ export default function Header({ className = "" }: HeaderProps) {
           >
             <SheetHeader className="pt-4 px-4">
               <SheetTitle className="text-center text-xl text-white">
-                Menu
+                メニュー
               </SheetTitle>
             </SheetHeader>
 
@@ -132,61 +132,61 @@ export default function Header({ className = "" }: HeaderProps) {
                 onClick={() => setOpen(false)}
                 className="text-lg text-white"
               >
-                Work
+                施工実績
               </Link>
               <Link
                 href="/staffs"
                 onClick={() => setOpen(false)}
                 className="text-lg text-white"
               >
-                Staffs
+                スタッフ
               </Link>
               <Link
                 href="/menu"
                 onClick={() => setOpen(false)}
                 className="text-lg text-white"
               >
-                Services
+                ご案内
               </Link>
               <Link
                 href="/stores"
                 onClick={() => setOpen(false)}
                 className="text-lg text-white"
               >
-                Access
+                アクセス
               </Link>
               <Link
                 href="/about"
                 onClick={() => setOpen(false)}
                 className="text-lg text-white"
               >
-                Our Vision
+                当店の思い
               </Link>
               <Link
                 href="/news"
                 onClick={() => setOpen(false)}
                 className="text-lg text-white"
               >
-                Notice
+                お知らせ
               </Link>
               <Link
                 href="mailto:fukugenyaguide225@gmail.com"
                 className="hover:underline text-white"
               >
-                Contact
+                ご連絡
               </Link>
               <Link
                 href="/jobApp"
                 onClick={() => setOpen(false)}
                 className="text-lg text-white"
               >
-                Careers
+                求人／協力会社募集
               </Link>
             </div>
             {/* ▼ ログインだけ下に固定 */}
 
             <div className="p-4 space-y-4">
-              {isLoggedIn && (
+              {/* {isLoggedIn && (
                 <Link
                   href="/postList"
                   onClick={() => setOpen(false)}
@@ -210,7 +210,7 @@ export default function Header({ className = "" }: HeaderProps) {
                 >
                   コミュニティ
                 </Link>
-              )}
+              )} */}
 
               <Link
                 href="/login"
