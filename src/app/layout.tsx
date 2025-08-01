@@ -62,17 +62,17 @@ export default function RootLayout({
         <meta property="og:title" content="株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事" />
         <meta property="og:description" content="大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://fukugenyaguide225-homepage.vercel.app/" />
+        <meta property="og:url" content="https://fukugenyaguide225.vercel.app/" />
         <meta property="og:site_name" content="株式会社 福源屋" />
         <meta property="og:locale" content="ja_JP" />
-        <meta property="og:image" content="https://fukugenyaguide225-homepage.vercel.app/logo.png" />
+        <meta property="og:image" content="https://fukugenyaguide225.vercel.app/logo.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         {/* Twitterカード */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事" />
         <meta name="twitter:description" content="大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。" />
-        <meta name="twitter:image" content="https://fukugenyaguide225-homepage.vercel.app/logo.png" />
+        <meta name="twitter:image" content="https://fukugenyaguide225.vercel.app/logo.png" />
       </head>
 
       <body className="relative min-h-screen">
@@ -95,7 +95,7 @@ export default function RootLayout({
               "大阪の美装工事・ビルメンテナンス・内装工事・清掃なら株式会社福源屋へ。2002年創業、関西一円対応。",
             telephone: "072-824-9569",
             faxNumber: "06-6537-4903",
-            url: "https://fukugenyaguide225-homepage.vercel.app/",
+            url: "https://fukugenyaguide225.vercel.app/",
             address: {
               "@type": "PostalAddress",
               postalCode: "576-0016",
@@ -106,7 +106,7 @@ export default function RootLayout({
             founder: "中井 弘也",
             employee: "13名（アルバイト含む）",
             openingHours: "09:00-18:00",
-            image: "https://fukugenyaguide225-homepage.vercel.app/logo.png",
+            image: "https://fukugenyaguide225.vercel.app/opgLogo.png",
             sameAs: [],
           })}
         </Script>
