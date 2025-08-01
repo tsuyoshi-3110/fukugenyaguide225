@@ -65,14 +65,14 @@ export default function RootLayout({
         <meta property="og:url" content="https://fukugenyaguide225.vercel.app/" />
         <meta property="og:site_name" content="株式会社 福源屋" />
         <meta property="og:locale" content="ja_JP" />
-        <meta property="og:image" content="https://fukugenyaguide225.vercel.app/logo.png" />
+        <meta property="og:image" content="https://fukugenyaguide225.vercel.app/opgLogo.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         {/* Twitterカード */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事" />
         <meta name="twitter:description" content="大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。" />
-        <meta name="twitter:image" content="https://fukugenyaguide225.vercel.app/logo.png" />
+        <meta name="twitter:image" content="https://fukugenyaguide225.vercel.app/opgLogo.png" />
       </head>
 
       <body className="relative min-h-screen">
