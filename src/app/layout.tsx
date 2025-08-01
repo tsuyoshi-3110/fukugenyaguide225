@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     title: "株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事",
     description:
       "大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。",
-    url: "https://fukugenyaguide225-homepage.vercel.app/",
+    url: "https://fukugenyaguide225.vercel.app/",
     siteName: "株式会社 福源屋",
     images: [
       {
-        url: "https://fukugenyaguide225-homepage.vercel.app/opgLogo.png",
+        url: "https://fukugenyaguide225.vercel.app/opgLogo.png",
         width: 1200,
         height: 630,
       },
@@ -50,7 +50,7 @@ export default function RootLayout({
       <head>
         {/* ファビコン */}
         <link rel="icon" href="/favicon.ico?v=2" />
-        {/* ロゴ画像事前読み込み */}
+        {/* OGP画像事前読み込み */}
         <link
           rel="preload"
           as="image"
