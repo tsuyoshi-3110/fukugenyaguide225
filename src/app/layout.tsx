@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     title: "株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事",
     description:
       "大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。",
-    url: "https://fukugenyaguide225.vercel.app/",
+    url: "https://www.fukugenyaguide.com//",
     siteName: "株式会社 福源屋",
     images: [
       {
-        url: "https://fukugenyaguide225.vercel.app/opgLogo.png",
+        url: "https://www.fukugenyaguide.com//opgLogo.png",
         width: 1200,
         height: 630,
       },
@@ -49,34 +49,52 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
       <head>
-        <title>株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事</title>
+        <title>
+          株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事
+        </title>
         {/* ファビコン */}
         <link rel="icon" href="/favicon.ico?v=2" />
         {/* OGP画像事前読み込み */}
-        <link
-          rel="preload"
-          as="image"
-          href="/opgLogo.png"
-          type="image/png"
-        />
+        <link rel="preload" as="image" href="/opgLogo.png" type="image/png" />
         <meta name="theme-color" content="#ffffff" />
 
         {/* ★★★ ここからOGP/Twitterタグは“手動で直書き”してください ★★★ */}
-        <meta property="og:title" content="株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事" />
-        <meta property="og:description" content="大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。" />
+        <meta
+          property="og:title"
+          content="株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事"
+        />
+        <meta
+          property="og:description"
+          content="大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。"
+        />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://fukugenyaguide225.vercel.app/" />
+        <meta property="og:url" content="https://www.fukugenyaguide.com//" />
         <meta property="og:site_name" content="株式会社 福源屋" />
         <meta property="og:locale" content="ja_JP" />
-        <meta property="og:image" content="https://fukugenyaguide225.vercel.app/opgLogo.png" />
+        <meta
+          property="og:image"
+          content="https://www.fukugenyaguide.com//opgLogo.png"
+        />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
 
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事" />
-        <meta name="twitter:description" content="大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。" />
-        <meta name="twitter:image" content="https://fukugenyaguide225.vercel.app/opgLogo.png" />
-        {/* ★★★ ここまで ★★★ */}
+        <meta
+          name="twitter:title"
+          content="株式会社 福源屋｜大阪の美装工事・ビルメンテナンス・内装工事"
+        />
+        <meta
+          name="twitter:description"
+          content="大阪府交野市・大阪市ほか関西一円で、美装工事・ビルメンテナンス・清掃のご相談なら福源屋へ。"
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.fukugenyaguide.com//opgLogo.png"
+        />
+        <meta
+          name="google-site-verification"
+          content="0KGmgpVrsVv1XFqvU1n_1Kps0G4MGuJV0Q7354u7Gow"
+        />
       </head>
 
       <body className="relative min-h-screen">
@@ -99,7 +117,7 @@ export default function RootLayout({
               "大阪の美装工事・ビルメンテナンス・内装工事・清掃なら株式会社福源屋へ。2002年創業、関西一円対応。",
             telephone: "072-824-9569",
             faxNumber: "06-6537-4903",
-            url: "https://fukugenyaguide225.vercel.app/",
+            url: "https://www.fukugenyaguide.com//",
             address: {
               "@type": "PostalAddress",
               postalCode: "576-0016",
@@ -110,7 +128,7 @@ export default function RootLayout({
             founder: "中井 弘也",
             employee: "13名（アルバイト含む）",
             openingHours: "09:00-18:00",
-            image: "https://fukugenyaguide225.vercel.app/opgLogo.png",
+            image: "https://www.fukugenyaguide.com//opgLogo.png",
             sameAs: [],
           })}
         </Script>
