@@ -82,21 +82,35 @@ export const L10N = {
 
 /** ここを新規サイトごとに調整 */
 export const AI_SITE: AiSiteConfig = {
-  brand: "おそうじ処 たよって屋",
-  url: "https://tayotteya.shop",
+  brand: "株式会社 福源屋",
+  url: "https://www.fukugenyaguide.com",
   areasByLang: {
-    ja: "大阪・兵庫（例：大阪市東淀川区／豊中市／吹田市 など）",
-    en: "Osaka & Hyogo (e.g., Higashiyodogawa, Toyonaka, Suita)",
+    ja: "大阪府交野市・大阪市ほか関西一円",
+    en: "Greater Kansai area (based in Katano/Osaka)",
   },
   servicesByLang: {
-    ja: ["ハウスクリーニング", "エアコンクリーニング", "家事代行", "整理収納"],
-    en: ["house cleaning", "A/C cleaning", "housekeeping", "organizing"],
+    ja: [
+      "美装工事",
+      "ビルメンテナンス",
+      "定期清掃・日常清掃",
+      "ハウスクリーニング",
+      "内装工事",
+      "現場作業員派遣",
+    ],
+    en: [
+      "post-construction cleaning",
+      "building maintenance",
+      "regular & daily cleaning",
+      "house cleaning",
+      "interior work / renovations",
+      "on-site worker dispatch",
+    ],
   },
-  retail: true,                 // 物販あり
-  productPageRoute: "/products",
+  retail: false,                // 物販なし
+  productPageRoute: "/products", // 業務内容一覧ページ
   languages: {
     default: "ja",
-    allowed: ["ja", "en", "zh", "zh-TW", "ko", "fr", "es", "de", "pt", "it", "ru", "th", "vi", "id", "hi", "ar"],
+    allowed: ["ja","en","zh","zh-TW","ko","fr","es","de","pt","it","ru","th","vi","id","hi","ar"],
   },
   limits: {
     qaBase: 30,
@@ -107,6 +121,7 @@ export const AI_SITE: AiSiteConfig = {
     keywords: 200,
   },
 };
+
 
 /** 言語別の文字列取得（英語フォールバック） */
 export function t<K extends keyof typeof L10N>(key: K, lang: string): (typeof L10N)[K][keyof (typeof L10N)[K]] {
