@@ -2,23 +2,23 @@
 // 新規サイトごとに“ここだけ”書き換えればOK
 
 export type AiSiteConfig = {
-  brand: string;                // 店名
-  url: string;                  // 公式URL（任意）
+  brand: string; // 店名
+  url: string; // 公式URL（任意）
   areasByLang: Record<string, string>; // 対応エリア説明（言語別）
   servicesByLang: Record<string, string[]>; // 提供サービス（言語別）
-  retail: boolean;              // 物販あり？
-  productPageRoute: string;     // 商品一覧ページのルート（例: "/products"）
+  retail: boolean; // 物販あり？
+  productPageRoute: string; // 商品一覧ページのルート（例: "/products"）
   languages: {
-    default: string;            // 既定UI言語（例: "ja"）
-    allowed: string[];          // 許可UI言語（例: ["ja","en",...])
+    default: string; // 既定UI言語（例: "ja"）
+    allowed: string[]; // 許可UI言語（例: ["ja","en",...])
   };
   limits: {
-    qaBase: number;             // 共通知識の最大件数
-    qaOwner: number;            // 店舗固有知識の最大件数
-    qaLearned: number;          // トレーニング知識の最大件数
-    menuLines: number;          // メニュー抽出の最大行
-    productLines: number;       // 商品抽出の最大行
-    keywords: number;           // キーワード最大件数
+    qaBase: number; // 共通知識の最大件数
+    qaOwner: number; // 店舗固有知識の最大件数
+    qaLearned: number; // トレーニング知識の最大件数
+    menuLines: number; // メニュー抽出の最大行
+    productLines: number; // 商品抽出の最大行
+    keywords: number; // キーワード最大件数
   };
 };
 
@@ -50,7 +50,7 @@ export const L10N = {
   },
   productPriceAdvice: {
     ja: "商品価格については、商品一覧ページをご確認ください。", // リンクは貼らない
-    en: "For product prices, please check the Products page.",       // no link
+    en: "For product prices, please check the Products page.", // no link
   },
   priceDisclaimer: {
     ja: "現地状況で変動する場合があります。",
@@ -80,6 +80,7 @@ export const L10N = {
   },
 };
 
+//カスタム
 /** ここを新規サイトごとに調整 */
 export const AI_SITE: AiSiteConfig = {
   brand: "株式会社 福源屋",
@@ -106,11 +107,28 @@ export const AI_SITE: AiSiteConfig = {
       "on-site worker dispatch",
     ],
   },
-  retail: false,                // 物販なし
+  retail: false, // 物販なし
   productPageRoute: "/products", // 業務内容一覧ページ
   languages: {
     default: "ja",
-    allowed: ["ja","en","zh","zh-TW","ko","fr","es","de","pt","it","ru","th","vi","id","hi","ar"],
+    allowed: [
+      "ja",
+      "en",
+      "zh",
+      "zh-TW",
+      "ko",
+      "fr",
+      "es",
+      "de",
+      "pt",
+      "it",
+      "ru",
+      "th",
+      "vi",
+      "id",
+      "hi",
+      "ar",
+    ],
   },
   limits: {
     qaBase: 30,
@@ -122,9 +140,11 @@ export const AI_SITE: AiSiteConfig = {
   },
 };
 
-
 /** 言語別の文字列取得（英語フォールバック） */
-export function t<K extends keyof typeof L10N>(key: K, lang: string): (typeof L10N)[K][keyof (typeof L10N)[K]] {
+export function t<K extends keyof typeof L10N>(
+  key: K,
+  lang: string
+): (typeof L10N)[K][keyof (typeof L10N)[K]] {
   const pool = L10N[key] as any;
   return pool[lang] ?? pool["en"];
 }
