@@ -7,8 +7,9 @@ import { useThemeGradient } from "@/lib/useThemeGradient";
 import { ThemeKey, THEMES } from "@/lib/themes";
 import clsx from "clsx";
 import { AsYouType, parsePhoneNumberFromString } from "libphonenumber-js";
+import { SITE_KEY } from "@/lib/atoms/siteKeyAtom";
 
-const SITE_KEY = "fukugenyaguide225";
+
 
 export function PhoneSection() {
   const [phone, setPhone] = useState<string | null>(null);
@@ -86,7 +87,7 @@ export function PhoneSection() {
     <section className="max-w-4xl mx-auto text-center mb-12">
       {phone && (
         <h2 className="text-3xl font-bold text-white/80 mb-2">
-          御用の方はこちらまで
+          ご注文はこちら
         </h2>
       )}
 

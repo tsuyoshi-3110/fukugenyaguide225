@@ -5,6 +5,7 @@ import { db } from "@/lib/firebase";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { AsYouType } from "libphonenumber-js";
+import { SITE_KEY } from "@/lib/atoms/siteKeyAtom";
 
 type Props = {
   onClose: () => void;
@@ -18,7 +19,6 @@ export default function ForgotEmail({ onClose, onEmailFound }: Props) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const SITE_KEY = "fukugenyaguide225";
 
   const handleSearch = async () => {
     setLoading(true);
