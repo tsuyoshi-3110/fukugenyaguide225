@@ -27,9 +27,9 @@ import { doc, onSnapshot } from "firebase/firestore";
 type Keys =
   | "home"
   | "menuTitle"
-  | "projects" // ★ 追加：旧 products（施工実績）
-  | "products" // ★ 新設：商品一覧
-  | "productsEC" // EC
+  | "projects"
+  | "products"
+  | "productsEC"
   | "staffs"
   | "pricing"
   | "areas"
@@ -46,7 +46,8 @@ type Keys =
   | "analytics"
   | "admin"
   | "aiChat"
-  | "hours";
+  | "hours"
+  | "business-card";
 
 const T: Record<UILang, Record<Keys, string>> = {
   ja: {
@@ -60,7 +61,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "対応エリア",
     stores: "店舗一覧",
     story: "私たちの思い",
-    blog: "ブログ",
+    blog: "取材はこちら",
     news: "お知らせ",
     company: "会社概要",
     reserve: "ご予約はこちら",
@@ -72,6 +73,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "管理者ログイン",
     aiChat: "AIサポート",
     hours: "営業時間",
+    "business-card": "デジタル名刺",
   },
   en: {
     menuTitle: "Menu",
@@ -84,7 +86,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "Service Areas",
     stores: "Store List",
     story: "Our Story",
-    blog: "Blog",
+    blog: "Media / Press Inquiries",
     news: "News",
     company: "Company Profile",
     reserve: "Book Here",
@@ -96,6 +98,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "Administrator Login",
     aiChat: "AI Chat",
     hours: "Hours",
+    "business-card": "Business Card",
   },
   zh: {
     menuTitle: "菜单",
@@ -108,7 +111,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "服务区域",
     stores: "门店列表",
     story: "我们的理念",
-    blog: "博客",
+    blog: "媒体采访",
     news: "公告",
     company: "公司简介",
     reserve: "点击预约",
@@ -120,6 +123,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "管理员登录",
     aiChat: "AI聊天",
     hours: "营业时间",
+    "business-card": "电子名片",
   },
   "zh-TW": {
     menuTitle: "選單",
@@ -132,7 +136,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "服務範圍",
     stores: "門市列表",
     story: "我們的理念",
-    blog: "部落格",
+    blog: "媒體採訪",
     news: "最新消息",
     company: "公司簡介",
     reserve: "預約請點此",
@@ -144,6 +148,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "管理者登入",
     aiChat: "AI聊天",
     hours: "營業時間",
+    "business-card": "電子名片",
   },
   ko: {
     menuTitle: "메뉴",
@@ -156,7 +161,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "서비스 지역",
     stores: "매장 목록",
     story: "우리의 이야기",
-    blog: "블로그",
+    blog: "취재 문의",
     news: "공지사항",
     company: "회사 소개",
     reserve: "예약하기",
@@ -168,6 +173,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "관리자 로그인",
     aiChat: "AI 채팅",
     hours: "영업시간",
+    "business-card": "디지털 명함",
   },
   fr: {
     menuTitle: "Menu",
@@ -180,7 +186,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "Zones desservies",
     stores: "Liste des magasins",
     story: "Notre histoire",
-    blog: "Blog",
+    blog: "Demandes de presse",
     news: "Actualités",
     company: "Profil de l’entreprise",
     reserve: "Réserver ici",
@@ -192,6 +198,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "Connexion administrateur",
     aiChat: "Chat IA",
     hours: "Horaires",
+    "business-card": "Carte de visite numérique",
   },
   es: {
     menuTitle: "Menú",
@@ -204,7 +211,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "Áreas de servicio",
     stores: "Lista de tiendas",
     story: "Nuestra historia",
-    blog: "Blog",
+    blog: "Solicitudes de prensa",
     news: "Noticias",
     company: "Perfil de la empresa",
     reserve: "Reservar aquí",
@@ -216,6 +223,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "Inicio de sesión de administrador",
     aiChat: "Chat IA",
     hours: "Horario",
+    "business-card": "Tarjeta de presentación digital",
   },
   de: {
     menuTitle: "Menü",
@@ -228,7 +236,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "Einsatzgebiete",
     stores: "Filialübersicht",
     story: "Unsere Geschichte",
-    blog: "Blog",
+    blog: "Presseanfragen",
     news: "Neuigkeiten",
     company: "Unternehmensprofil",
     reserve: "Hier buchen",
@@ -240,6 +248,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "Administrator-Anmeldung",
     aiChat: "AI-Chat",
     hours: "Öffnungszeiten",
+    "business-card": "Digitale Visitenkarte",
   },
   pt: {
     menuTitle: "Menu",
@@ -252,7 +261,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "Áreas de atendimento",
     stores: "Lista de lojas",
     story: "Nossa história",
-    blog: "Blog",
+    blog: "Solicitações de imprensa",
     news: "Notícias",
     company: "Perfil da empresa",
     reserve: "Reservar aqui",
@@ -264,6 +273,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "Login do administrador",
     aiChat: "Chat IA",
     hours: "Horário",
+    "business-card": "Cartão de visita digital",
   },
   it: {
     menuTitle: "Menu",
@@ -276,7 +286,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "Aree servite",
     stores: "Elenco negozi",
     story: "La nostra storia",
-    blog: "Blog",
+    blog: "Richieste stampa",
     news: "Notizie",
     company: "Profilo aziendale",
     reserve: "Prenota qui",
@@ -288,6 +298,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "Accesso amministratore",
     aiChat: "Chat IA",
     hours: "Orari",
+    "business-card": "Biglietto da visita digitale",
   },
   ru: {
     menuTitle: "Меню",
@@ -300,7 +311,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "Районы обслуживания",
     stores: "Список магазинов",
     story: "Наша история",
-    blog: "Блог",
+    blog: "Запросы СМИ",
     news: "Новости",
     company: "О компании",
     reserve: "Онлайн-запись",
@@ -312,6 +323,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "Вход администратора",
     aiChat: "AI-чат",
     hours: "Часы работы",
+    "business-card": "Цифровая визитка",
   },
   th: {
     menuTitle: "เมนู",
@@ -324,7 +336,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "พื้นที่ให้บริการ",
     stores: "รายชื่อร้านค้า",
     story: "เรื่องราวของเรา",
-    blog: "บล็อก",
+    blog: "ติดต่อสื่อมวลชน",
     news: "ข่าวสาร",
     company: "ข้อมูลบริษัท",
     reserve: "จองที่นี่",
@@ -336,6 +348,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "เข้าสู่ระบบผู้ดูแล",
     aiChat: "แชต AI",
     hours: "เวลาเปิดทำการ",
+    "business-card": "นามบัตรดิจิทัล",
   },
   vi: {
     menuTitle: "Menu",
@@ -348,7 +361,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "Khu vực phục vụ",
     stores: "Danh sách cửa hàng",
     story: "Câu chuyện của chúng tôi",
-    blog: "Blog",
+    blog: "Yêu cầu phỏng vấn",
     news: "Tin tức",
     company: "Hồ sơ công ty",
     reserve: "Đặt lịch tại đây",
@@ -360,6 +373,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "Đăng nhập quản trị",
     aiChat: "Trò chuyện AI",
     hours: "Giờ làm việc",
+    "business-card": "Danh thiếp số",
   },
   id: {
     menuTitle: "Menu",
@@ -372,7 +386,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "Area layanan",
     stores: "Daftar toko",
     story: "Kisah kami",
-    blog: "Blog",
+    blog: "Permintaan liputan media",
     news: "Berita",
     company: "Profil perusahaan",
     reserve: "Pesan di sini",
@@ -384,6 +398,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "Masuk admin",
     aiChat: "Obrolan AI",
     hours: "Jam operasional",
+    "business-card": "Kartu nama digital",
   },
   hi: {
     menuTitle: "मेनू",
@@ -396,7 +411,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "सेवा क्षेत्र",
     stores: "स्टोर सूची",
     story: "हमारी कहानी",
-    blog: "ब्लॉग",
+    blog: "मीडिया पूछताछ",
     news: "समाचार",
     company: "कंपनी प्रोफ़ाइल",
     reserve: "यहाँ बुक करें",
@@ -408,6 +423,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "प्रशासक लॉगिन",
     aiChat: "AI चैट",
     hours: "समय",
+    "business-card": "डिजिटल विज़िटिंग कार्ड",
   },
   ar: {
     menuTitle: "القائمة",
@@ -420,7 +436,7 @@ const T: Record<UILang, Record<Keys, string>> = {
     areas: "مناطق الخدمة",
     stores: "قائمة المتاجر",
     story: "قصتنا",
-    blog: "المدونة",
+    blog: "استفسارات إعلامية",
     news: "الأخبار",
     company: "نبذة عن الشركة",
     reserve: "احجز هنا",
@@ -432,9 +448,11 @@ const T: Record<UILang, Record<Keys, string>> = {
     admin: "تسجيل دخول المسؤول",
     aiChat: "دردشة الذكاء الاصطناعي",
     hours: "ساعات العمل",
+    "business-card": "بطاقة عمل رقمية",
   },
 };
 
+/* ===== 以下は元コードと同一 ===== */
 const HEADER_H = "3rem";
 const TRIPLE_TAP_INTERVAL_MS = 500;
 const IGNORE_SELECTOR = "a,button,input,select,textarea,[role='button']";
@@ -443,9 +461,8 @@ const IGNORE_SELECTOR = "a,button,input,select,textarea,[role='button']";
 const MENU_ITEMS: { key: keyof (typeof T)["ja"]; href: string }[] = [
   { key: "productsEC", href: "/productsEC" },
   { key: "home", href: "/" },
-  { key: "projects", href: "/projects" }, // ★ 旧 products の中身はこちらへ
-  { key: "products", href: "/products" }, // ★ 新しい商品一覧
-
+  { key: "projects", href: "/projects" },
+  { key: "products", href: "/products" },
   { key: "staffs", href: "/staffs" },
   { key: "pricing", href: "/menu" },
   { key: "hours", href: "/hours" },
@@ -460,6 +477,11 @@ const MENU_ITEMS: { key: keyof (typeof T)["ja"]; href: string }[] = [
   { key: "aiChat", href: "/ai" },
   { key: "partners", href: "/jobApp" },
 ];
+
+/* ===== コンポーネント本体は変更なし ===== */
+// （以下はあなたの元コードのまま）
+
+// ...（ここから下はあなたの提供したHeader関数と同一のままでOK）
 
 type EditableSettings = {
   visibleMenuKeys?: string[];
