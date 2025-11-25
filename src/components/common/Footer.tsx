@@ -2,6 +2,7 @@
 "use client";
 
 import { useUILang, type UILang } from "@/lib/atoms/uiLangAtom";
+import Link from "next/link";
 
 type T = {
   cta: string;
@@ -152,8 +153,7 @@ const STRINGS: Record<UILang, T> = {
     lineAlt: "LINE",
     siteAria: "Situs resmi",
     siteAlt: "Fukugenya (Resmi)",
-    areaLinkText:
-      "Jasa pembersihan & pemeliharaan di Osaka/Kansai",
+    areaLinkText: "Jasa pembersihan & pemeliharaan di Osaka/Kansai",
     rights: "Hak cipta dilindungi.",
   },
   hi: {
@@ -163,8 +163,7 @@ const STRINGS: Record<UILang, T> = {
     lineAlt: "LINE",
     siteAria: "आधिकारिक वेबसाइट",
     siteAlt: "Fukugenya (आधिकारिक)",
-    areaLinkText:
-      "ओसाका/कंसाई में भवन सफाई व मेंटेनेंस",
+    areaLinkText: "ओसाका/कंसाई में भवन सफाई व मेंटेनेंस",
     rights: "सर्वाधिकार सुरक्षित।",
   },
   ar: {
@@ -174,8 +173,7 @@ const STRINGS: Record<UILang, T> = {
     lineAlt: "لاين",
     siteAria: "الموقع الرسمي",
     siteAlt: "فوكوغينيا (رسمي)",
-    areaLinkText:
-      "تنظيف وصيانة المباني في أوساكا/كانساي",
+    areaLinkText: "تنظيف وصيانة المباني في أوساكا/كانساي",
     rights: "جميع الحقوق محفوظة.",
   },
 };
@@ -186,7 +184,6 @@ export default function Footer() {
   const t = STRINGS[lang];
   const dir: "rtl" | "ltr" = lang === "ar" ? "rtl" : "ltr";
 
-
   return (
     <footer
       dir={dir}
@@ -194,15 +191,16 @@ export default function Footer() {
     >
       <div className="mx-auto max-w-6xl px-4 py-10">
         <div className="flex flex-col items-center gap-6 text-center">
-          {/* CTA（リンク無しのためボタン風のダミー表示） */}
-          <div
+         
+
+          {/* CTA：/contact へ遷移 */}
+          <Link
+            href="/contact"
             aria-label={t.cta}
-            className="w-full max-w-xs sm:max-w-sm rounded-xl bg-primary px-6 py-3 font-semibold text-white/90 shadow hover:opacity-90"
+            className="w-full max-w-xs sm:max-w-sm rounded-xl bg-primary px-6 py-3 font-semibold text-white/90 shadow hover:opacity-90 text-center"
           >
             {t.cta}
-          </div>
-
-
+          </Link>
 
           {/* エリアテキスト（リンク無し） */}
           <div className="space-y-1 text-xs leading-tight">
