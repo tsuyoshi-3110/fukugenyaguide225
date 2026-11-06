@@ -989,6 +989,7 @@ export default function LoginPage() {
   }, []);
 
   const handleLogout = async () => {
+    await fetch("/api/owner/session", { method: "DELETE" }).catch(() => {});
     await signOut(auth);
   };
 
